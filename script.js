@@ -11,7 +11,8 @@ var useSpecialChar;
 var useLowerCase;
 var useUpperCase;
 var useNumbers;
-var finishedPassword = "" ;
+// var finishedPassword = "" ;
+
 
 function askNumOfChar () {
   var response = prompt ("How many characters would you like your password to be?");
@@ -34,17 +35,50 @@ function askUseNumbers () {
   var response = confirm ("Is it ok to use numbers?");
 }
 
+function generatePassword (){
+  var numberOfCharacters = 12;
+  var charsToUse = []; //need to create an empty array to allow for the user character selection
+
+//  charsToUse = charsToUse.concat (addLowerCase);
+//  charsToUse = charsToUse.concat (addUpperCase);
+//  charsToUse = charsToUse.concat (addNumbers);
+//  charsToUSe = charsToUse.concat (addSpecialChar);
+ //var charsToUse = addLowerCase.concat (addUpperCase, addNumbers, addSpecialChar); //don't want to do this, bc it hardcodes ALL arrays and doesn't allow for user rejection of array
+ console.log(charsToUse);
+
+
+  var password = "";
+
+  for (var i =0 ; i < numberOfCharacters; i++) {
+    var randomNumber = Math.floor(Math.random() * charsToUse.length); //chooses a random number to apply to the array
+    console.log(randomNumber);
+    password += charsToUse [randomNumber];
+    console.log(password);
+  }
+
+  return password;
+
+  //askNumOfChar();
+  //askUseLowerCase();
+  //askUseUpperCase();
+  //askUseSpecialChar();
+  //askUseNumbers();
+}
 // --------------------------------------------------------------
 
 
-  console.log(askNumOfChar())
-  console.log(askUseSpecialChar());
-  console.log(askUseLowerCase());
-  console.log(askUseUpperCase());
-  console.log(askUseNumbers());
+
+ // console.log(askNumOfChar())
+  //console.log(askUseSpecialChar());
+  //console.log(askUseLowerCase());
+  //console.log(askUseUpperCase());
+  //console.log(askUseNumbers());
 
 
-
+for (var i =0 ; i < numberOfCharacters; i++) {
+  var randomNumber = Math.floor(Math.random() * chars.length);
+  password += chars.substring (randomNumber, randomNumber+1);
+}
 
 
 
